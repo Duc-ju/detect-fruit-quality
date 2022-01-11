@@ -3,7 +3,7 @@ const bananaTree = {
   name: "Độ già",
   results: ["Chuối già", "Chuối non"],
   images: [
-    "https://mymall.vn/wp-content/uploads/2018/11/chuoi-xanh-luoc-co-tac-dung-gi-6.jpg",
+    "https://github.com/Duc-ju/detect-fruit-quality/blob/main/public/logo192.png?raw=true",
     "https://www.baodongthap.vn/database/image/2016/05/28/qua-chuoi-xanh-biet-cach-dung-se-cuc-co-loi.jpg",
   ],
   descriptions: [
