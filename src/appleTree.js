@@ -2,8 +2,10 @@ const appleTree = {
   //Độ nguyên vẹn
   name: "Độ nguyên vẹn",
   results: ["Nguyên vẹn, lành lặn", "Không lành lặn"],
+  images: ["https://kenh14cdn.com/2018/3/28/giai-ma-bi-an-tai-sao-tao-le-thuong-co-cham-nho-li-tie04559e742-15222381180261356972347.jpg",
+  "https://toquoc.mediacdn.vn/zoom/600_315/Upload/Article/admin/2014/1/17/rez_823_taongoaithoi.jpg"],
   descriptions: [
-    "Xét về tổng thể quả còn nguyên vẹn như khi được thu hoạch: không dập nát,  không có vết sâu đục,không bị trầy xước hoặc vết trầy xước không đáng kể (tương đương hoặc nhỏ hơn vết trầy do lấy móng tay bấm vào vỏ). Biểu hiện của vết dập là màu của vỏ có màu đạm bất thường, khi lấy tay nhấn vào những vị trí này sẽ thầy mềm.",
+    "Xét về tổng thể quả còn nguyên vẹn như khi được thu hoạch: không dập nát,  không có vết sâu đục,không bị trầy xước hoặc vết trầy xước không đáng kể (tương đương hoặc nhỏ hơn vết trầy do lấy móng tay bấm vào vỏ). Biểu hiện của vết dập là màu của vỏ có màu đậm bất thường, khi lấy tay nhấn vào những vị trí này sẽ thầy mềm.",
     "Xuất hiện các vết dập, sâu đục hoặc những vết trầy xước lớn",
   ],
   isLeave: false,
@@ -21,6 +23,8 @@ const appleTree = {
       //Hình dạng
       name: "Hình dạng",
       results: ["Tròn đều", "Dị dạng"],
+      images: ["https://cafefcdn.com/2017/photo-1-1506038695096.jpg",
+      "https://danviet.mediacdn.vn/upload/4-2016/images/2016-10-25/147736980077499-tao-1.jpg"],
       descriptions: [
         "Táo khi thu hoạch thường sẽ có hình dạng tròn đều. Bạn hãy nhìn tổng thể quả, nếu quả cân đối hoặc chỉ hơi méo một chút thì hãy tích vào đây nhé",
         "Nếu quả có những vết vẹo lớn, tổng thể quả không còn giữ được hình khối tròn thì bạn tích vào đây nhé",
