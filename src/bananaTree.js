@@ -3,7 +3,7 @@ const bananaTree = {
   name: "Độ già",
   results: ["Chuối già", "Chuối non"],
   images: [
-    "https://github.com/Duc-ju/detect-fruit-quality/blob/main/public/photos/images%20(1).jfif?raw=true",
+    "https://mymall.vn/wp-content/uploads/2018/11/chuoi-xanh-luoc-co-tac-dung-gi-6.jpg",
     "https://www.baodongthap.vn/database/image/2016/05/28/qua-chuoi-xanh-biet-cach-dung-se-cuc-co-loi.jpg",
   ],
   descriptions: [
@@ -15,6 +15,8 @@ const bananaTree = {
     //Độ nguyên vẹn
     name: "Độ nguyên vẹn",
     results: ["Lành lặn", "Không lành lặn"],
+    images: ["https://www.foodnk.com/wp-content/uploads/2020/12/mot-so-benh-do-vi-sinh-vat-anh-huong-den-chat-luong-chuoi-sau-thu-hoach-min.jpg",
+    "https://www.foodnk.com/wp-content/uploads/2020/12/cac-yeu-to-anh-huong-den-chat-luong-chuoi-sau-thu-hoach-min.jpg"],
     descriptions: [
       "Chuối không không bị nứt vỏ, sâu đục, không có vết lõm",
       "Chuối bị nứt vỏ hoặc sâu đục hoặc có vết lõm",
