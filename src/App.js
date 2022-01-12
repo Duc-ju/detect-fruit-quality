@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './style.css'
 import Fruit from './Fruit';
 import appleTree from './appleTree';
 import ChooseFruit from './ChooseFruit';
@@ -23,7 +24,7 @@ function App(){
       {currentfruit&&currentfruit==='QUẢ MẬN TAM HOA'&&<Fruit node={plumTree} fruit={currentfruit} callback={refreshFruit} />}
       {currentfruit&&currentfruit==='QUẢ NHÃN'&&<Fruit node={longanTree} fruit={currentfruit} callback={refreshFruit} />}
       {currentfruit&&currentfruit==='QUẢ MÍT'&&<Fruit node={jackfruitTree} fruit={currentfruit} callback={refreshFruit} />}
-      {currentfruit&&currentfruit==='QUẢ MẬN HỒNG XIÊM'&&<Fruit node={sapodillaTree} fruit={currentfruit} callback={refreshFruit} />}
+      {currentfruit&&currentfruit==='QUẢ HỒNG XIÊM'&&<Fruit node={sapodillaTree} fruit={currentfruit} callback={refreshFruit} />}
   </div>
 }
 

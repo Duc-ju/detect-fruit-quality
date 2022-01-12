@@ -56,6 +56,8 @@ function Fruit({ node,fruit,callback }) {
     setListValues(listValues)
     setPrevValue()
   }
+
+
   return (
       <div>
         <div className="container-fluid bg-warning p-2">
@@ -92,7 +94,8 @@ function Fruit({ node,fruit,callback }) {
             {value.results.map((item, index) => {
             return (
                 <div className="card" key={index}>
-                    {value.images&&value.images[index]!==''&&<img className="card-img-top" src={value.images[index]} alt="Card image cap" />}
+                    {value.images&&value.images[index]!==''&&<div class="d-flex justify-content-center align-items-center">
+                      <img className="card-img-top" src={value.images[index]} alt="Card image cap" /></div>}
                     <div className="card-body">
                         <h5 className="card-title">{item}</h5>
                         {value.descriptions&&value.descriptions[index]!==''&&<p className="card-text">{value.descriptions[index]}</p>}
