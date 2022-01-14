@@ -1,0 +1,47 @@
+@media screen and (min-width: 768px) {
+  .card-img-top {
+    width: 50%;
+  }
+}
+.switch{
+  *, *:after, *:before {
+    box-sizing: border-box;
+  }
+  
+  input[type="checkbox"] {
+    visibility: hidden;
+    &:checked + label {
+      background-color: #000;
+      &:before {
+        transform: translateX(30px);
+        background-color: #FFF;
+      }
+    }
+  }
+  
+  label {
+    display: flex;
+    width: 60px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 33em;
+    position: relative;
+    transition: transform .75s ease-in-out;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    
+    &:before {
+      transition: transform .75s ease;
+      transition-delay: .5s;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: #000;
+      border-radius: 50%;
+      top: 4px;
+      left: 4px;
+    }
+  }
+}

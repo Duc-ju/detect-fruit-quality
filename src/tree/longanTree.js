@@ -30,7 +30,7 @@ const longanTree = {
             ],
             images: [
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT80uEViS9Jg-iQXRg3mYT0zwVzYpjWjMXNig&usqp=CAU",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyLNsqlS3RL2O-YesWNUw7bXFT81QjFIBC5A&usqp=CAU",
+                "https://raw.githubusercontent.com/Duc-ju/detect-fruit-quality/main/public/photos/images.jpg",
             ],
             isLeave: false,
             node0: {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 const notice = {
   bad: 'Tình trạng tệ!',
   medium : 'Tình trạng khá!',
@@ -14,7 +14,16 @@ function Fruit({ node,fruit,callback }) {
   const [now, setNow] = useState()
   const [listValues, setListValues] = useState([])
   const [result, setResult] = useState()
-  const [prevValue, setPrevValue] = useState()
+  const [version, setVersion] = useState('production')
+
+  useEffect(()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  },[])
+
+  const prevValue = useRef()
 
   const handleNextNode = ()=>{
     if(now!==undefined){
@@ -28,7 +37,7 @@ function Fruit({ node,fruit,callback }) {
         setResult(nextNote.value)
       }
       else{
-        setPrevValue(value);
+        prevValue.current=value
         setValue(nextNote);
         setNow();
         window.scrollTo({
@@ -46,25 +55,30 @@ function Fruit({ node,fruit,callback }) {
     setNow()
     setListValues([])
     setResult()
-    setPrevValue()
+    prevValue.current=undefined
   }
 
   const handlePrev = ()=>{
-    setValue(prevValue)
+    setValue(prevValue.current)
     setNow()
     listValues.pop()
     setListValues(listValues)
-    setPrevValue()
+    prevValue.current=undefined
   }
 
 
   return (
       <div>
         <div className="container-fluid bg-warning p-2">
-            <h2 className="text-center m-0 text-white">NHẬN BIẾT TÌNH TRẠNG {fruit}</h2>
+            <h2 className="text-center m-0 text-white">NHẬN DIỆN TÌNH TRẠNG {fruit.name}</h2>
         </div>
-        <div>
-            <button onClick={()=>{callback()}} className="btn btn-default m-1">Về trang chủ</button>
+        <div className="row">
+            <div className="col-sm-6 text-left">
+              <button onClick={()=>{callback()}} className="btn btn-default m-1">Về trang chủ</button>
+            </div>
+            <div className="col-sm-6 text-sm-right">
+              {version==='review'&&<button className="btn btn-default m-1" data-toggle="modal" data-target="#tree">Xem cây quyết định</button>}
+            </div>
         </div>
         <div id="wrapper" className="jumbotron">
         {result?
@@ -87,14 +101,14 @@ function Fruit({ node,fruit,callback }) {
         </div>
         :<div>
             <h2 className="mb-4 text-center">{value.name}</h2>
-            {prevValue&&<div className="text-right">
+            {prevValue.current&&<div className="text-right">
             <button onClick={handlePrev} className="btn btn-success">&#8592;</button>
             </div>}
             <div className="card-deck">
             {value.results.map((item, index) => {
             return (
                 <div className="card" key={index}>
-                    {value.images&&value.images[index]!==''&&<div class="d-flex justify-content-center align-items-center">
+                    {value.images&&value.images[index]!==''&&<div className="d-flex justify-content-center align-items-center">
                       <img className="card-img-top" src={value.images[index]} alt="Card image cap" /></div>}
                     <div className="card-body">
                         <h5 className="card-title">{item}</h5>
@@ -102,12 +116,12 @@ function Fruit({ node,fruit,callback }) {
                     </div>
                     <div className="card-footer">
                     <div className="form-check d-flex align-items-center w-100">
-                        <input  onChange={()=>setNow(index)} className="form-check-input" type="radio" id={index} checked={now==index}/>
+                        <input  onChange={()=>setNow(index)} className="form-check-input" type="radio" id={index} checked={now===index}/>
                         <label className="form-check-label p-2 w-100" htmlFor={index}>{item}</label>
                     </div>
                     </div>
                 </div>
-                
+      
             );
             })}
             </div>
@@ -126,8 +140,37 @@ function Fruit({ node,fruit,callback }) {
         </div>}
         
         </div>
-        <div className="container-fluid">
-            <p className="text-center" style={{opacity:0.5}}>Defined by Đức</p>
+        <div className="container-fluid text-center pb-4">
+          <div className="switch" style={{marginLeft:"50%", transform: "translateX(-30px)"}}>
+            <input 
+            type="checkbox" 
+            id="toggle" 
+            onChange={()=>{setVersion(version==='production'?'review':'production')}} 
+            checked={version==='review'}
+            />
+            <label htmlFor="toggle" style={{marginBottom:0, marginRight:8}}></label>
+          </div>
+          <div> Chế độ {version==='production'?'dành cho người dùng':'review (Có thêm cây quyết định)'}</div>
+        </div>
+        <div className="modal fade w-100" id="tree" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog" style={{maxWidth:1200}} role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">CÂY QUYẾT ĐỊNH CỦA {fruit.name}</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <img 
+                src={fruit.tree} 
+                style={{
+                  width: "100%"
+                }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
   );
