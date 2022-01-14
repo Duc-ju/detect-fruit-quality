@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Modal from './Modal'
 const notice = {
   bad: 'Tình trạng tệ!',
   medium : 'Tình trạng khá!',
@@ -152,26 +153,7 @@ function Fruit({ node,fruit,callback }) {
           </div>
           <div> Chế độ {version==='production'?'dành cho người dùng':'review (Có thêm cây quyết định)'}</div>
         </div>
-        <div className="modal fade w-100" id="tree" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div className="modal-dialog" style={{maxWidth:1200}} role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">CÂY QUYẾT ĐỊNH CỦA {fruit.name}</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <img 
-                src={fruit.tree} 
-                style={{
-                  width: "100%"
-                }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Modal fruit={fruit} />
       </div>
   );
 }
