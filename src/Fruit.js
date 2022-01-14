@@ -1,9 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 import Modal from './Modal'
 const notice = {
-  bad: 'Tình trạng tệ!',
-  medium : 'Tình trạng khá!',
-  good: 'Tình trạng tốt!'
+  bad: {
+    title:'Tình trạng tệ!',
+    description: 'Quả có một vài đặc điểm rất tệ, bạn không nên ăn quả này nữa nhé!'
+  },
+  medium : {
+    title:'Tình trạng khá!',
+    description: 'Quả có một vài đặc điểm không được tốt nhưng quả vẫn ăn được và khá ngon nhé!'
+  },
+  good: {
+    title:'Tình trạng tốt!',
+    description: 'Tất cả các đặc điểm của quả đều hoàn hảo, ăn quả sẽ rất ngon!'
+  }
 }
 const noticeClass = {
   bad: 'text-danger',
@@ -92,7 +101,8 @@ function Fruit({ node,fruit,callback }) {
             })}
             </ul>
             <div className="mt-4">
-            <h3 className={[noticeClass[result]]}>Kết luận: {result==='bad'&&'Tình trạng tệ!'}{result==='medium'&&'Tình trạng khá!'}{result==='good'&&'Tình trạng tốt!'}</h3>
+            <h3 className={[noticeClass[result]]}>Kết luận: {notice[result].title}</h3>
+            <h4>{notice[result].description}</h4>
             <div className="text-center">
                 <button onClick={handleNew} className="btn btn-primary mt-1">
                 Xem lại
