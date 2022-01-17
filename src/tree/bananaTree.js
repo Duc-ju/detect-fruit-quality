@@ -102,7 +102,7 @@ const bananaTree = {
             ],
             descriptions: [
               "Hãy so sánh quả bạn cần nhận diện tình trạng với ảnh , nếu giống từ 1 đến 4 là cuống xanh",
-              "Hãy so sánh quả bạn cần nhận diện tình trạng với ảnh , nếu giống từ 1 đến 4 là cuống vàng",
+              "Hãy so sánh quả bạn cần nhận diện tình trạng với ảnh , nếu giống từ 5 đến 7 là cuống vàng",
             ],
             isLeave: false,
             node0: {
