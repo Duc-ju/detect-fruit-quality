@@ -82,7 +82,7 @@ function Fruit({ node,fruit,callback }) {
         <div className="container-fluid bg-warning p-2">
             <h2 className="text-center m-0 text-white">NHẬN DIỆN TÌNH TRẠNG {fruit.name}</h2>
         </div>
-        <div className="row">
+        <div className="row ml-0 mr-0">
             <div className="col-sm-6 text-left">
               <button onClick={()=>{callback()}} className="btn btn-default m-1">Về trang chủ</button>
             </div>
